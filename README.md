@@ -73,3 +73,12 @@ or like this -  ``` bytes memory encodedFunctionCall = abi.encodeWithSignature("
 
 
  Finaly - you purposal sucessfully executed . now you can check the upate value of BOX.sol file smart contract.
+
+On sepolio testnet - 
+
+Box - 0xd007c4656Ac449E611B76a71837430E0EDB594Ca
+GOVERC20- 0x1DEDCe52FC37F829dd6a2154AE3f2a2bE41152FD
+Timelock- 0xC92eAC52ad6766473c1ECDb4BC650d21db949bB9 
+Governance - 0x592b41b44710659999ec05ab0B544FB8aD58F037
+
+
