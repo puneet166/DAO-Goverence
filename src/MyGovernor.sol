@@ -6646,11 +6646,14 @@ contract MyGovernor is
     constructor(IVotes _token, TimelockController _timelock)
         Governor("MyGovernor")
         GovernorSettings(1, /* 1 block */ 50, /* 50 blocks */ 0)
-         //1 - represent votingDelay , this delay in between purposal start to voting start or to vote.(Delay, between the proposal is created and the vote starts. The unit this duration is expressed in depends on the clock (see EIP-6372) this contract uses.This can be increased to leave time for users to buy voting power, or delegate it, before the voting of a proposal starts.)
+        //1 - represent votingDelay , this delay in between purposal start to voting start or to vote.(Delay, between the proposal is created and the vote starts. The unit this duration is expressed in depends on the clock (see EIP-6372) this contract uses.This can be increased to leave time for users to buy voting power, or delegate it, before the voting of a proposal starts.)
         // 50 - Represent votingPeriod , This is the periods where voting is happened in ths time frame after this, no voting availble for vote(Delay between the vote start and vote end. The unit this duration is expressed in depends on the clock (see EIP-6372) this contract uses.). 
-        //0 - represnt the threshold. The number of votes required in order for a voter to become a proposer
+        //0 - represnt the threshold.  It's stating that the proposalThreshold() function determines the minimum number of votes (or tokens) required for an account to create a proposal within the governance system. In other words, it sets a threshold that an account must surpass in terms of voting power before it can propose any changes or actions within the system.(this 0 in wei form )
+        // if you set 100 token required to purpose a purposal , set like this in wei -  100e18.
         GovernorVotes(_token)
         GovernorVotesQuorumFraction(4)
+        //4 - represent the Quorum percentage - percentage of token that need to vote in order for something to pass if there 100 tokens in circulations atleast 4 tokens need to vote for it to pass.
+
         GovernorTimelockControl(_timelock)
     {}
 
