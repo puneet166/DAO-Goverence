@@ -6646,6 +6646,9 @@ contract MyGovernor is
     constructor(IVotes _token, TimelockController _timelock)
         Governor("MyGovernor")
         GovernorSettings(1, /* 1 block */ 50, /* 50 blocks */ 0)
+         //1 - represent votingDelay , this delay in between purposal start to voting start or to vote.(Delay, between the proposal is created and the vote starts. The unit this duration is expressed in depends on the clock (see EIP-6372) this contract uses.This can be increased to leave time for users to buy voting power, or delegate it, before the voting of a proposal starts.)
+        // 50 - Represent votingPeriod , This is the periods where voting is happened in ths time frame after this, no voting availble for vote(Delay between the vote start and vote end. The unit this duration is expressed in depends on the clock (see EIP-6372) this contract uses.). 
+        //0 - represnt the threshold. The number of votes required in order for a voter to become a proposer
         GovernorVotes(_token)
         GovernorVotesQuorumFraction(4)
         GovernorTimelockControl(_timelock)
